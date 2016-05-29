@@ -1,0 +1,14 @@
+C:\Users\kubal\Documents\Visual Studio 2015\Projects\MP3 Converter\MP3 Converter\bin\Debug\MP3 Converter.exe.config
+C:\Users\kubal\Documents\Visual Studio 2015\Projects\MP3 Converter\MP3 Converter\bin\Debug\MP3 Converter.exe
+C:\Users\kubal\Documents\Visual Studio 2015\Projects\MP3 Converter\MP3 Converter\bin\Debug\MP3 Converter.pdb
+C:\Users\kubal\Documents\Visual Studio 2015\Projects\MP3 Converter\MP3 Converter\obj\Debug\MP3 Converter.csprojResolveAssemblyReference.cache
+C:\Users\kubal\Documents\Visual Studio 2015\Projects\MP3 Converter\MP3 Converter\obj\Debug\MainWindow.g.cs
+C:\Users\kubal\Documents\Visual Studio 2015\Projects\MP3 Converter\MP3 Converter\obj\Debug\App.g.cs
+C:\Users\kubal\Documents\Visual Studio 2015\Projects\MP3 Converter\MP3 Converter\obj\Debug\MP3 Converter_MarkupCompile.cache
+C:\Users\kubal\Documents\Visual Studio 2015\Projects\MP3 Converter\MP3 Converter\obj\Debug\MP3 Converter_MarkupCompile.lref
+C:\Users\kubal\Documents\Visual Studio 2015\Projects\MP3 Converter\MP3 Converter\obj\Debug\MainWindow.baml
+C:\Users\kubal\Documents\Visual Studio 2015\Projects\MP3 Converter\MP3 Converter\obj\Debug\MP3 Converter.g.resources
+C:\Users\kubal\Documents\Visual Studio 2015\Projects\MP3 Converter\MP3 Converter\obj\Debug\MP3_Converter.Properties.Resources.resources
+C:\Users\kubal\Documents\Visual Studio 2015\Projects\MP3 Converter\MP3 Converter\obj\Debug\MP3 Converter.csproj.GenerateResource.Cache
+C:\Users\kubal\Documents\Visual Studio 2015\Projects\MP3 Converter\MP3 Converter\obj\Debug\MP3 Converter.exe
+C:\Users\kubal\Documents\Visual Studio 2015\Projects\MP3 Converter\MP3 Converter\obj\Debug\MP3 Converter.pdb
