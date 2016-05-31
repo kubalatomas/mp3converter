@@ -21,16 +21,27 @@ namespace MP3_Converter
     /// </summary>
     public partial class MainWindow : Window
     {
-        OpenFileDialog ofd_ = new OpenFileDialog();
+        private OpenFileDialog ofd_ = new OpenFileDialog();
+        private List<Argument> arguments_ = new List<Argument>();
         public MainWindow()
         {
             InitializeComponent();
+            arguments_.Add(new Argument("64 kbps", "-b64 "));
+            arguments_.Add(new Argument("128 kbps", "-b128 "));
+            arguments_.Add(new Argument("192 kbps", "-b192 "));
+            arguments_.Add(new Argument("256 kbps", "-b256 "));
+            arguments_.Add(new Argument("320 kbps", "-b320 "));
+            arguments_.Add(new Argument("V1", "-V1 "));
+            arguments_.Add(new Argument("V2", "-V2 "));
+            arguments_.Add(new Argument("V3", "-V3 "));
+            arguments_.Add(new Argument("V4", "-V4 "));
+            arguments_.Add(new Argument("V5", "-V5 "));
             arguments_cb.Items.Clear();
-            arguments_cb.Items.Add("64 kbps");
-            arguments_cb.Items.Add("128 kbps");
-            arguments_cb.Items.Add("192 kbps");
-            arguments_cb.Items.Add("256 kbps");
-            arguments_cb.Items.Add("320 kbps");
+            arguments_cb.Items.Add(arguments_[0]);
+            arguments_cb.Items.Add(arguments_[1]);
+            arguments_cb.Items.Add(arguments_[2]);
+            arguments_cb.Items.Add(arguments_[3]);
+            arguments_cb.Items.Add(arguments_[4]);
             arguments_cb.SelectedIndex = 1;
             ofd_.Filter = "Music files (*.mp3, *.wma, *.wav) | *.mp3; *.wma; *.wav";
 
@@ -49,11 +60,11 @@ namespace MP3_Converter
                 cbr_rb.IsChecked = false;
                 vbr_rb.IsChecked = true;
                 arguments_cb.Items.Clear();
-                arguments_cb.Items.Add("V1");
-                arguments_cb.Items.Add("V2");
-                arguments_cb.Items.Add("V3");
-                arguments_cb.Items.Add("V4");
-                arguments_cb.Items.Add("V5");
+                arguments_cb.Items.Add(arguments_[5]);
+                arguments_cb.Items.Add(arguments_[6]);
+                arguments_cb.Items.Add(arguments_[7]);
+                arguments_cb.Items.Add(arguments_[8]);
+                arguments_cb.Items.Add(arguments_[9]);
                 arguments_cb.SelectedIndex = 1;
             }
             else
@@ -61,11 +72,12 @@ namespace MP3_Converter
                 cbr_rb.IsChecked = true;
                 vbr_rb.IsChecked = false;
                 arguments_cb.Items.Clear();
-                arguments_cb.Items.Add("64 kbps");
-                arguments_cb.Items.Add("128 kbps");
-                arguments_cb.Items.Add("192 kbps");
-                arguments_cb.Items.Add("256 kbps");
-                arguments_cb.Items.Add("320 kbps");
+                arguments_cb.Items.Clear();
+                arguments_cb.Items.Add(arguments_[0]);
+                arguments_cb.Items.Add(arguments_[1]);
+                arguments_cb.Items.Add(arguments_[2]);
+                arguments_cb.Items.Add(arguments_[3]);
+                arguments_cb.Items.Add(arguments_[4]);
                 arguments_cb.SelectedIndex = 1;
             }
         }
@@ -77,7 +89,12 @@ namespace MP3_Converter
 
         private void convert_b_Click(object sender, RoutedEventArgs e)
         {
-            Converter.WaveToMP3(path_tb.Text);
+            Argument arg = (Argument)arguments_cb.SelectedItem;
+            status_tb.Text = "Converting";
+            Converter.WaveToMP3(path_tb.Text, arg);
+            status_tb.Text = "Converted";
+            status_tb.Foreground = Brushes.Green;
+
         }
     }
 }

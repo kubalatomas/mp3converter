@@ -8,12 +8,33 @@ using System.IO;
 
 namespace MP3_Converter
 {
+    class Argument
+    {
+        private string name_;
+        private string value_;
+
+        public Argument(string name, string value)
+        {
+            name_ = name;
+            value_ = value;
+        }
+
+        public override string ToString()
+        {
+            return name_;
+        }
+
+        public string getValue() { return value_; }
+
+
+    }
     class Converter
     {
-        public static void WaveToMP3(string inputFile)
+        public static void WaveToMP3(string inputFile, Argument arg)
         {
+            inputFile = "testtt.wav";
             string outputFile = (string)inputFile.Clone();
-
+            
             int count = 0;
             for (int i = outputFile.Length; i > 0; i--)
             {
@@ -26,24 +47,14 @@ namespace MP3_Converter
             outputFile += "mp3";
             File.Create(outputFile).Dispose();
             ProcessStartInfo lame = new ProcessStartInfo();
-            lame.FileName = "lame\\lamess.exe";
-            lame.Arguments = "-V2 " + inputFile + " " + outputFile;
+            lame.FileName = "lame\\lame.exe";
+            lame.Arguments = arg.getValue() + inputFile + " " + outputFile;
             lame.WindowStyle = ProcessWindowStyle.Hidden;
             Process p;
-            try
-            {
-                p = Process.Start(lame);
-            }
-            catch (System.ComponentModel.Win32Exception ex)
-            {
-                throw ex;
-            }
+            p = Process.Start(lame);
             p.WaitForExit();
         } 
     }
 
-    class Arguments
-    {
-
-    }
+    
 }
